@@ -1,0 +1,30 @@
+
+<div class="container mt-3">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>ID</th>
+        <th>Marque</th>
+        <th>Modèle</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let car of cars">
+        <td>{{ car.id }}</td>
+        <td>{{ car.marque }}</td>
+        <td>{{ car.modele }}</td>
+        <td>
+          <button class="btn btn-primary" (click)="showDetails(car)">Détails</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="card mt-3" *ngIf="selectedCar">
+    <div class="card-body">
+      <h5 class="card-title">{{ selectedCar.marque }} {{ selectedCar.modele }}</h5>
+      <p class="card-text">ID: {{ selectedCar.id }}</p>
+    </div>
+  </div>
+</div>
